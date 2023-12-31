@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import MasonryImageList from './ImageGrid';
+import { Button } from '@mui/material';
 
 // Replace with your product data source
 const products = [
@@ -39,9 +40,9 @@ function About() {
         the beauty of nature to your home.
       </p>
       <Link to="/productList/flowers" className="explore-btn" >
-        <button style={{width:"50%",marginLeft:"25%", marginBottom:"50px"}}>
+        <Button variant='contained' style={{width:"50%",marginLeft:"25%", marginBottom:"50px", borderRadius:'20px'}}>
         Explore Our Collection
-        </button>
+        </Button>
       </Link>
     </div>
   );

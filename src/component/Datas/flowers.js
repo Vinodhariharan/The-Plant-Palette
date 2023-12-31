@@ -9,6 +9,7 @@ const products = [
       description: "Fragrant blooms and beautiful foliage, attracts bees and butterflies.",
       link: "lavender",
       Type: "Outdoor Plant",
+    category:"flowers"
     },
     {
       id: 2,
@@ -18,6 +19,7 @@ const products = [
       description: "Puffy spheres of vibrant blooms in diverse colors, a showstopper for any landscape.",
       link: "hydrangeas",
       Type: "Outdoor Plant",
+    category:"flowers"
     },
     {
       id: 3,
@@ -27,6 +29,7 @@ const products = [
       description: "A symbol of spring and new beginnings, available in a rainbow of colors.",
       link: "tulips",
       Type: "Spring Bulb",
+    category:"flowers"
     },
     {
       id: 4,
@@ -36,6 +39,7 @@ const products = [
       description: "Exotic elegance with long-lasting blooms, ideal for luxury gifts.",
       link: "orchids",
       Type: "Houseplant",
+    category:"flowers"
     },
     {
       id: 5,
@@ -45,6 +49,7 @@ const products = [
       description: "Fluffy mounds of delicate petals, perfect for romantic occasions and symbolizing prosperity.",
       link: "peonies",
       Type: "Perennial",
+    category:"flowers"
     },
     {
       id: 6,
@@ -54,6 +59,7 @@ const products = [
       description: "The classic symbol of love and romance, in a spectrum of colors and fragrances.",
       link: "garden-roses",
       Type: "Outdoor Shrub",
+    category:"flowers"
     },
     {
       id: 7,
@@ -63,6 +69,7 @@ const products = [
       description: "Playful pom-poms in vibrant hues, adding cheerfulness to any occasion.",
       link: "ranunculus",
       Type: "Spring Bulb",
+    category:"flowers"
     },
     {
       id: 8,
@@ -72,6 +79,7 @@ const products = [
       description: "Elegant and sophisticated, ideal for funerals and symbolizing purity.",
       link: "calla-lilies",
       Type: "Summer Bulb",
+    category:"flowers"
     },
     {
       id: 9,
@@ -81,6 +89,7 @@ const products = [
       description: "Delicate and graceful, symbolizing anticipation and hope.",
       link: "anemones",
       Type: "Spring Bulb",
+    category:"flowers"
     },
     {
       id: 10,
@@ -90,6 +99,7 @@ const products = [
       description: "Sweetly scented trumpet-shaped blooms in various colors, symbolizing friendship and trust.",
       link: "freesia",
       Type: "Spring Bulb",
+    category:"flowers"
     },
 
 {
@@ -100,6 +110,7 @@ const products = [
     description: "Bold and vibrant with papery red, orange, and pink petals, symbolizing remembrance and hope.",
     link: "poppies",
     Type: "Annual",
+  category:"flowers"
   },
   {
     id: 12,
@@ -109,6 +120,7 @@ const products = [
     description: "Showstopping blooms in dazzling shapes and colors, adding drama and signifying gratitude.",
     link: "dahlias",
     Type: "Summer Bulb",
+  category:"flowers"
   },
   {
     id: 13,
@@ -118,6 +130,7 @@ const products = [
     description: "Sunny smiles with cheerful yellow, orange, pink, and red petals, symbolizing innocence and joy.",
     link: "gerbera-daisies",
     Type: "Perennial",
+  category:"flowers"
   },
   {
     id: 14,
@@ -127,6 +140,7 @@ const products = [
     description: "Delicate and elegant with velvety petals in purple, blue, and white, symbolizing wisdom and hope.",
     link: "irises",
     Type: "Perennial",
+  category:"flowers"
   },
   {
     id: 15,
@@ -136,6 +150,7 @@ const products = [
     description: "Fragrant beauties with white, pink, and yellow blooms, symbolizing purity and devotion.",
     link: "lilies",
     Type: "Summer Bulb",
+  category:"flowers"
   },
   {
     id: 16,
@@ -145,6 +160,7 @@ const products = [
     description: "Tall spikes of delicate blue, purple, and white florets, symbolizing joy and an open heart.",
     link: "delphiniums",
     Type: "Summer Perennial",
+  category:"flowers"
   },
   {
     id: 17,
@@ -154,6 +170,7 @@ const products = [
     description: "Long-lasting and versatile with vibrant colors, symbolizing friendship and prosperity.",
     link: "alstroemerias",
     Type: "Summer Bulb",
+  category:"flowers"
   },
   {
     id: 18,
@@ -163,6 +180,7 @@ const products = [
     description: "Sweetly scented clusters in blue, purple, pink, and white, symbolizing playfulness and gratitude.",
     link: "hyacinths",
     Type: "Spring Bulb",
+  category:"flowers"
   },
   {
     id: 19,
@@ -172,6 +190,7 @@ const products = [
     description: "Cheerful and vibrant with yellow, orange, and red blooms, symbolizing warmth and longevity.",
     link: "marigolds",
     Type: "Annual",
+  category:"flowers"
   },
   {
     id: 20,
@@ -181,6 +200,7 @@ const products = [
     description: "Cheerful giants with radiant yellow faces, perfect for summer gardens and bouquets.",
     link: "sunflowers",
     Type: "Outdoor Plant",
+  category:"flowers"
   },
   
   ];

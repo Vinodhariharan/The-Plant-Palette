@@ -1,18 +1,20 @@
 import React from 'react';
-import { Grid, Typography, Box, List, ListItem, Container } from '@mui/material';
+import { Grid, Typography, Box, List, ListItem, Container, Button } from '@mui/material';
 import generateLongDescription from './longDiscription';
 import generateKeyFeatures from './keyFeatures';
 import './productPage.css';
-import useCart from '../AllComp/useCart';
+import useCart, { CartContext } from '../AllComp/useCart';
+import { useContext } from 'react';
 
 function ProductPage({ product }) {
-  console.log(product)
+
+  console.log(product.Type)
   const keyFeatures = generateKeyFeatures(product.Type);
   const longDescription = generateLongDescription(product);
   // const keyFeatures = '';
   // const longDescription = '';
 
-  const { addToCart } = useCart(); 
+  const { cartItems, addToCart } = useContext(CartContext);
   const handleAddToCart = () => {
     addToCart(product);
   }
@@ -44,9 +46,9 @@ function ProductPage({ product }) {
             ))}
           </List>
           <Box sx={{ marginTop: 2 }}>
-            <button onClick={handleAddToCart}>
+            <Button style={{width:'100%',borderRadius:'20px'}} onClick={handleAddToCart}>
               Add to Cart
-            </button>
+            </Button>
           </Box>
         </Container>
       </Grid>

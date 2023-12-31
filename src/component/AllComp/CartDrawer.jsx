@@ -13,17 +13,21 @@ import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
 import ProductCard from './CardComponent'; // Assume you have a ProductCard component
 import { Badge } from '@mui/material';
-import useCart from './useCart'; // Import the useCart custom hook
+import useCart, { CartContext } from './useCart'; // Import the useCart custom hook
+import { useContext } from 'react';
+import { CartCard } from './CartCard';
 
 export default function CartDrawer() {
   const [open, setOpen] = React.useState(false);
-  const {cartItems, addToCart } = useCart(); // Use the useCart custom hook
+  const { cartItems, addToCart } = useContext(CartContext);
   
 
   const handleRemoveItem = (item) => {
     addToCart(item); // Reuse addToCart for removing items by adding them back with quantity - 1
   };
   // React.useEffect(() => {}, cartItems);
+
+  console.log(cartItems)
 
 
   return (
@@ -70,8 +74,8 @@ export default function CartDrawer() {
             ) : (
               <List>
                 {cartItems.map((item) => (
-                  <ListItem key={item.id}>
-                    <ProductCard product={item} /> {/* Display product card */}
+                  <ListItem key={item.link}>
+                    {/* <ProductCard product={item} /> 
                     <Stack direction="row" alignItems="center" sx={{ ml: 2 }}>
                       <Typography variant="body2">{item.price} INR</Typography>
                       <Button
@@ -82,7 +86,8 @@ export default function CartDrawer() {
                       >
                         Remove
                       </Button>
-                    </Stack>
+                    </Stack> */}
+                    <CartCard product={item}></CartCard>
                   </ListItem>
                 ))}
               </List>

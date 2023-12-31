@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import '../../assets/css/Register.css';
 import pic from '../../assets/images/Add a heading (1).png';
 import { Link } from 'react-router-dom';
-import { Snackbar, Alert } from '@mui/material';
+import { Snackbar, Alert, Button } from '@mui/material';
+import { Input } from '@mui/joy';
 
 function Register() {
   const [errorMessage, setErrorMessage] = useState(false);
@@ -103,7 +104,7 @@ function Register() {
           <h4 className="heading" style={{ paddingBottom: '10px' }}>The Plant Palette</h4>
           <h2 style={{ paddingBottom: '10px' }}>Register</h2>
           <label htmlFor="firstName">First Name</label>
-          <input
+          <Input sx={{borderRadius:'20px'}}
             className="infocollection"
             type="text"
             id="firstName"
@@ -111,35 +112,39 @@ function Register() {
             onChange={handleChange}
           />
           <label htmlFor="lastName">Last Name</label>
-          <input className='infocollection'
+          <Input className='infocollection'
             type="text"
             id="lastName"
             placeholder={formData.lastName}
             onChange={handleChange}
+            sx={{borderRadius:'20px'}}
           />
           <label htmlFor="email">Email</label>
-          <input className='infocollection'
+          <Input className='infocollection'
             type="email"
             id="email"
             placeholder={formData.email}
             onChange={handleChange}
+            sx={{borderRadius:'20px'}}
           />
           <label htmlFor="password">Password</label>
-          <input className='infocollection'
+          <Input className='infocollection'
             type="password"
             id="password"
             placeholder={formData.password}
             onChange={handleChange}
+            sx={{borderRadius:'20px'}}
           />
           <label htmlFor="confirmPassword">Confirm Password</label>
-          <input className='infocollection'
+          <Input className='infocollection'
             type="password"
             id="confirmPassword"
             placeholder={formData.confirmPassword}
             onChange={handleChange}
+            sx={{borderRadius:'20px'}}
           />
           {/* <Link sx={{ paddingBottom: '10px' }} to="/"> */}
-          <button type="submit">Register</button>
+          <Button variant='contained' style={{width:'100%', margin:'10px',marginLeft:'0px', borderRadius:'20px'}} type="submit">Register</Button>
           {/* </Link> */}
           <p style={{ margin: '10px', textAlign: 'center' }}>
             I'm already a member! <Link to="/login"><span style={{ color: 'blue' }}>Sign In</span></Link>

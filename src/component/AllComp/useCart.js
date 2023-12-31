@@ -1,34 +1,19 @@
-import { useState } from "react";
+import React, { createContext, useState, useContext } from "react";
+import { useEffect } from "react";
 
+// Create the cart context
+const CartContext = createContext();
+
+// Use a custom hook to manage cart state and provide context
 function useCart() {
-
-  
   const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      title: 'Product 1',
-      price: 10.99,
-      quantity: 2,
-      link:"Product 1"
-    },
-    {
-      id: 2,
-      title: 'Product 2',
-      price: 15.49,
-      quantity: 1,
-      link:"Product 2"
-    },
-    {
-      id: 3,
-      title: 'Product 3',
-      price: 5.99,
-      quantity: 3,
-      link:"Product 3"
-    },
+   
   ]);
 
+  
+
   const addToCart = (product) => {
-    console.log("yes called");
+    // ... your addToCart logic
     const existingItem = cartItems.find((item) => item.link === product.link);
 
     if (existingItem) {
@@ -42,11 +27,24 @@ function useCart() {
       // If the item is not in the cart, add it with quantity 1
       setCartItems((prevItems) => [...prevItems, { ...product, quantity: 1 }]);
     }
-    console.log(cartItems);
+    
   };
   
-
-  return { cartItems, addToCart };
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
+  // console.log(cartItems);
+  return { cartItems, addToCart, value: { cartItems, addToCart } };
 }
 
-export default useCart;
+// Provider component to make cart context available to children
+function CartProvider({ children }) {
+  const { value } = useCart();
+  return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
+}
+
+// Export the provider and custom hook
+export { CartProvider, CartContext };
+
+
+

@@ -104,13 +104,7 @@ export default function ProductList(pro) {
           <ProductCard
             key={product.id || index}
             product={product}
-            // imageSrc={product.imageSrc}
-            // title={product.title}
-            // price={product.price}
-            // stock={product.stock}
-            // // link={product.link}
-            // Type={product.Type}
-            // bloomTime={product.bloomTime}
+
           />
         </Grid>
       ))}

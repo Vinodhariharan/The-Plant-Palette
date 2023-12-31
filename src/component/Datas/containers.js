@@ -10,6 +10,7 @@ const products = [
       link: "terracotta-pot",
       Type: "Pot",
       Material: "Clay",
+    category:"containers"
     },
     {
       id: 44,
@@ -20,6 +21,7 @@ const products = [
       link: "ceramic-pot",
       Type: "Pot",
       Material: "Ceramic",
+    category:"containers"
     },
     {
       id: 45,
@@ -30,6 +32,7 @@ const products = [
       link: "plastic-pot",
       Type: "Pot",
       Material: "Plastic",
+    category:"containers"
     },
     {
       id: 46,
@@ -40,6 +43,7 @@ const products = [
       link: "hanging-basket",
       Type: "Pot",
       Category: "Hanging",
+    category:"containers"
     },
     {
       id: 47,
@@ -50,6 +54,7 @@ const products = [
       link: "self-watering-pot",
       Type: "Pot",
       Features: "Self-Watering",
+    category:"containers"
     },
     {
       id: 48,
@@ -60,6 +65,7 @@ const products = [
       link: "raised-bed",
       Type: "Bed",
       Category: "Raised",
+    category:"containers"
     },
     {
       id: 49,
@@ -70,6 +76,7 @@ const products = [
       link: "window-box",
       Type: "Pot",
       Category: "Window",
+    category:"containers"
     },
     {
       id: 50,
@@ -80,6 +87,7 @@ const products = [
       link: "planter-trio",
       Type: "Pot",
       Set: true,
+    category:"containers"
     },
     
   ];

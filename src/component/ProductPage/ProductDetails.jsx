@@ -1,37 +1,30 @@
 import { useParams } from "react-router-dom/cjs/react-router-dom.min";
-import products_tools from '../Datas/essentialGardenTools.js';
-import products_flowers from '../Datas/flowers.js';
-import products_trending from '../Datas/trendingPlant.js';
-import products_fertilizers from '../Datas/fertilizers.js';
-import products_containers from '../Datas/containers.js';
-import products_shrubs from '../Datas/shrubs.js';
 import ProductPage from "./ProductPage.jsx";
-function getProductById(productSlug) {
-   
+import { useContext } from "react";
+import { DataContext } from "../Datas/DataContext.jsx";
+
+function getProductById(productSlug,data) {
   
-  var p = products_tools.find((product) => product.link === productSlug);
-  if(!p){
-    p = products_flowers.find((product) => product.link === productSlug);
+  const allTypes = ['containers', 'flowers', 'tools', 'fertilizers', 'shrubs', 'trendingPlants']
+  var pro;  
+  
+  for (let index = 0; index < allTypes.length; index++) {
+    const element = allTypes[index];
+    if(!pro){
+      pro = data[element].find((product) => product.link === productSlug);
+    }
+    else{
+      return pro
+    }
   }
-  if(!p){
-    p = products_trending.find((product) => product.link === productSlug);
-  }
-  if(!p){
-    p = products_fertilizers.find((product) => product.link === productSlug);
-  }
-  if(!p){
-    p = products_containers.find((product) => product.link === productSlug);
-  }
-  if(!p){
-    p = products_shrubs.find((product) => product.link === productSlug);
-  }
-  return p; 
+  return pro
   }
 
 function ProductDetails() {
     const { slug } = useParams();
-    const product = getProductById(slug)
-    console.log(slug)
+    const { data } = useContext(DataContext); 
+    const product = getProductById(slug,data)
+
   
     return (
         <ProductPage product={product}/>

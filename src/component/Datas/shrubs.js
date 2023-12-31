@@ -7,6 +7,7 @@ const products = [
       description: "Attracts butterflies and hummingbirds with fragrant spikes of blooms in various colors.",
       link: "butterfly-bush",
       Type: "Outdoor Shrub",
+    category:"shrubs"
     },
     {
       id: 22,
@@ -16,6 +17,7 @@ const products = [
       description: "Showy blooms in shades of blue, pink, and white, perfect for borders and containers.",
       link: "hydrangea",
       Type: "Outdoor Shrub",
+    category:"shrubs"
     },
     {
       id: 23,
@@ -25,6 +27,7 @@ const products = [
       description: "Produces large, trumpet-shaped flowers in various colors, thrives in full sun.",
       link: "rose-of-sharon",
       Type: "Outdoor Shrub",
+    category:"shrubs"
     },
     {
       id: 24,
@@ -34,6 +37,7 @@ const products = [
       description: "Known for their vibrant spring blossoms in shades of pink, purple, red, and white.",
       link: "azalea",
       Type: "Outdoor Shrub",
+    category:"shrubs"
     },
     {
       id: 25,
@@ -43,6 +47,7 @@ const products = [
       description: "Fragrant, cone-shaped clusters of flowers in shades of purple, pink, and white.",
       link: "lilac",
       Type: "Outdoor Shrub",
+    category:"shrubs"
     },
     {
         id: 26,
@@ -52,6 +57,7 @@ const products = [
         description: "Showy evergreen shrub with large, colorful blossoms in spring, ideal for shady areas.",
         link: "rhododendron",
         Type: "Outdoor Shrub",
+      category:"shrubs"
       },
       {
         id: 27,
@@ -61,6 +67,7 @@ const products = [
         description: "Long-lasting, graceful clusters of blooms in various colors, perfect for borders and hedges.",
         link: "spirea",
         Type: "Outdoor Shrub",
+      category:"shrubs"
       },
       {
         id: 28,
@@ -70,6 +77,7 @@ const products = [
         description: "Bright yellow, early-blooming shrub that heralds the arrival of spring.",
         link: "forsythia",
         Type: "Outdoor Shrub",
+      category:"shrubs"
       },
       {
         id: 29,
@@ -79,6 +87,7 @@ const products = [
         description: "Produces trumpet-shaped blooms in pink, red, and white, attracts hummingbirds.",
         link: "weigela",
         Type: "Outdoor Shrub",
+      category:"shrubs"
       },
       {
         id: 30,
@@ -88,6 +97,7 @@ const products = [
         description: "Versatile shrub with diverse varieties offering fragrant flowers, colorful berries, and fall foliage.",
         link: "viburnum",
         Type: "Outdoor Shrub",
+      category:"shrubs"
       },
       {
         id: 31,
@@ -97,6 +107,7 @@ const products = [
         description: "Evergreen shrub known for its dense foliage and formal shape, ideal for hedges and topiary.",
         link: "boxwood",
         Type: "Outdoor Shrub",
+      category:"shrubs"
       },
       {
         id: 32,
@@ -106,6 +117,7 @@ const products = [
         description: "Evergreen shrub with iconic red berries and glossy foliage, a winter holiday favorite.",
         link: "holly",
         Type: "Outdoor Shrub",
+      category:"shrubs"
       },
       {
         id: 33,
@@ -115,6 +127,7 @@ const products = [
         description: "Deciduous shrub that produces vibrant red berries in fall and winter, attracts birds.",
         link: "winterberry",
         Type: "Outdoor Shrub",
+      category:"shrubs"
       },
       {
         id: 34,
@@ -124,6 +137,7 @@ const products = [
         description: "Known as 'summersweet' for its fragrant, late-summer blooms, thrives in moist conditions.",
         link: "clethra",
         Type: "Outdoor Shrub",
+      category:"shrubs"
       },
       {
         id: 35,
@@ -133,6 +147,7 @@ const products = [
         description: "Deciduous shrub with interesting peeling bark and clusters of white or pink flowers.",
         link: "ninebark",
         Type: "Outdoor Shrub",
+      category:"shrubs"
       },
   ];
   

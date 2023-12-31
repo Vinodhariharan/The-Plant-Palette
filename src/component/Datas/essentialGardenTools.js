@@ -7,6 +7,7 @@ const essentialGardenTools = [
       description: "Protect your hands from dirt, thorns, and blisters. Choose breathable and flexible materials.",
       link: "garden-gloves",
       Type: "Essential",
+    category:"tools"
     },
     {
       id: 2,
@@ -16,6 +17,7 @@ const essentialGardenTools = [
       description: "Ideal for scooping soil, planting seeds, and transplanting seedlings. Opt for a stainless steel trowel for durability.",
       link: "garden-trowel",
       Type: "Essential",
+    category:"tools"
     },
     {
       id: 3,
@@ -25,6 +27,7 @@ const essentialGardenTools = [
       description: "Digging holes, edging borders, and turning compost are simple with a sturdy spade. Consider weight and handle length for comfort.",
       link: "garden-spade",
       Type: "Essential",
+    category:"tools"
     },
     {
       id: 4,
@@ -34,6 +37,7 @@ const essentialGardenTools = [
       description: "Loosening soil, aerating compost, and turning over mulch are easier with a garden fork. Look for sturdy tines and a comfortable handle.",
       link: "garden-fork",
       Type: "Essential",
+    category:"tools"
     },
     {
       id: 5,
@@ -43,6 +47,7 @@ const essentialGardenTools = [
       description: "Pruning branches, trimming herbs, and harvesting vegetables require reliable shears. Choose bypass shears for clean cuts and precision.",
       link: "gardening-shears",
       Type: "Essential",
+    category:"tools"
     },
     {
         id: 6,
@@ -52,6 +57,7 @@ const essentialGardenTools = [
         description: "For thicker branches, clean cuts & minimal damage.",
         link: "pruning-saw",
         Type: "Essential",
+      category:"tools"
       },
       {
         id: 7,
@@ -61,6 +67,7 @@ const essentialGardenTools = [
         description: "Versatile for smoothing soil, leaves, & mulch.",
         link: "hand-rake",
         Type: "Essential",
+      category:"tools"
       },
       {
         id: 8,
@@ -70,6 +77,7 @@ const essentialGardenTools = [
         description: "Saves time & effort battling fall leaves.",
         link: "leaf-blower-vacuum",
         Type: "Helpful",
+      category:"tools"
       },
         {
         id: 9,
@@ -79,6 +87,7 @@ const essentialGardenTools = [
         description: "Directly nourishes roots & minimizes waste.",
         link: "watering-can",
         Type: "Essential",
+      category:"tools"
       },
       {
         id: 10,
@@ -88,6 +97,7 @@ const essentialGardenTools = [
         description: "Efficient water delivery for larger gardens.",
         link: "hose-and-nozzle",
         Type: "Essential",
+      category:"tools"
       },
       {
         id: 11,
@@ -97,6 +107,7 @@ const essentialGardenTools = [
         description: "Effortless hauling of soil, compost, & mulch.",
         link: "wheelbarrow",
         Type: "Helpful",
+      category:"tools"
       },
       {
         id: 12,
@@ -106,6 +117,7 @@ const essentialGardenTools = [
         description: "Comfy kneeler for protecting knees & balance.",
         link: "garden-kneeler",
         Type: "Useful",
+      category:"tools"
       },
       {
         id: 13,
@@ -115,6 +127,7 @@ const essentialGardenTools = [
         description: "Sprouts vegetables, herbs, & flowers indoors.",
         link: "seed-starting-trays",
         Type: "Useful",
+      category:"tools"
       },
       {
         id: 14,
@@ -124,6 +137,7 @@ const essentialGardenTools = [
         description: "Protection & grip for digging & pulling weeds.",
         link: "garden-gloves-with-claws",
         Type: "Helpful",
+      category:"tools"
       },
       {
         id: 15,
@@ -133,6 +147,7 @@ const essentialGardenTools = [
         description: "Reach high branches & tackle thicker stems.",
         link: "pruning-loppers",
         Type: "Useful",
+      category:"tools"
       },
       {
         id: 16,
@@ -142,6 +157,7 @@ const essentialGardenTools = [
         description: "Weeding, aerating soil, & creating furrows.",
         link: "garden-hoe",
         Type: "Essential",
+      category:"tools"
       },
       {
         id: 17,
@@ -151,6 +167,7 @@ const essentialGardenTools = [
         description: "Sun protection for face & neck (breathable materials).",
         link: "gardening-hat",
         Type: "Useful",
+      category:"tools"
       },
         {
         id: 18,
@@ -160,6 +177,7 @@ const essentialGardenTools = [
         description: "Precise control for delicate trimming & sculpting.",
         link: "pruning-snippers",
         Type: "Essential",
+      category:"tools"
       },
       {
         id: 19,
@@ -169,6 +187,7 @@ const essentialGardenTools = [
         description: "Portable comfort & protection while kneeling (waterproof & stain-resistant).",
         link: "gardening-kneeler-pad",
         Type: "Useful",
+      category:"tools"
       },
       {
         id: 20,
@@ -178,6 +197,7 @@ const essentialGardenTools = [
         description: "Monitors soil pH & nutrients for optimal plant growth.",
         link: "soil-tester",
         Type: "Helpful",
+      category:"tools"
       },
   
 

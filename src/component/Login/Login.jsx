@@ -1,7 +1,10 @@
-import { Alert } from '@mui/material';
+import { Alert, Button } from '@mui/material';
 import '../../assets/css/Login.css';
 import pic from '../../assets/images/gardeningpic1.gif';
 import { Link } from 'react-router-dom';
+import Input from '@mui/joy/Input';
+
+
 
 function Login(){
 
@@ -12,22 +15,23 @@ function Login(){
         
         <h4 className='heading' style={{paddingBottom:'10px'}}>The Plant Palette</h4>
         <h2 style={{paddingBottom:'10px'}}>Login</h2>
-        <label  htmlFor="username">Email</label>
-        <input
+        <label  style={{marginTop:'10px'}} htmlFor="username">Email</label>
+        <Input sx={{borderRadius:'20px'}}
           type="email"
           id="email"
         />
-        <label htmlFor="password">Password</label>
-        <input
+        <label style={{marginTop:'10px'}} htmlFor="password">Password</label>
+        <Input sx={{borderRadius:'20px'}}
           type="password"
           id="password"
         />
         <br />
         <Link sx={{paddingBottom:'10px' }} to="/"><span style={{color:'blue'}}>Forgot Password?</span></Link>
         <Link sx={{paddingBottom:'10px'}} to="/">
-        <button style={{marginBottom:'10px'}} type="button" >
+        <br />
+        <Button variant='contained' style={{width:'100%', margin:'10px',marginLeft:'0px', borderRadius:'20px'}} type="button" >
           Login
-        </button>
+        </Button>
         </Link>
         <p style={{paddingBottom:'10px'}}>New customer? <Link to="/register"><span style={{color:'blue'}}>Create your account</span></Link></p>
       </form>

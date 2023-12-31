@@ -11,23 +11,23 @@ import ArrowOutward from '@mui/icons-material/ArrowOutward';
 import theme from '../../theme'; // Import your Material-UI theme
 import { ThemeProvider } from '@mui/joy/styles';
 import '../../assets/css/button.css';
-import useCart from './useCart';
+import { CartContext } from "./useCart.js";
+import products from '../Datas/flowers.js';
 
 
 export default function ProductCard({
-  key, 
+  key,
   product
 }) {
 
-  const { addToCart } = useCart(); 
+  const { cartItems, addToCart } = React.useContext(CartContext);
   const handleAddToCart = () => {
     addToCart(product);
   }
   
-
   return (
     <ThemeProvider theme={theme}>
-      <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg', margin: '0 5px', borderRadius: '0px' }}>
+      <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg', margin: '0 30px', borderRadius: '10px' }}>
         <CardOverflow>
           <AspectRatio sx={{ minWidth: 200 }}>
             <img
@@ -35,7 +35,7 @@ export default function ProductCard({
               srcSet={`${product.imageSrc} 2x`}
               loading="lazy"
               alt={product.title}
-              key={key}  
+              key={key}
             />
           </AspectRatio>
         </CardOverflow>
@@ -49,7 +49,7 @@ export default function ProductCard({
             overlay
             endDecorator={<ArrowOutward />}
           >
-            {product.title} 
+            {product.title}
           </Link>
           <Typography
             level="title-lg"
@@ -64,12 +64,14 @@ export default function ProductCard({
           >
             {product.price} INR
           </Typography>
-          {product.stock && ( // Only show stock if available
+          {/* {product.stock && ( // Only show stock if available
             <Typography level="body-xs">Only {product.stock} left!</Typography>
-          )}
-          <button onClick={handleAddToCart}>
+          )} */}
+          <Typography level="body-xs">{product.stock ? `Only ${product.stock} left!` : 'Available'}</Typography>
+
+          <Button style={{ marginTop: '10px', borderRadius: '20px' }} onClick={handleAddToCart}>
             Add to Garden
-          </button>
+          </Button>
         </CardContent>
       </Card>
     </ThemeProvider>

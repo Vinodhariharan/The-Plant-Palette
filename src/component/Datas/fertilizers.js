@@ -7,6 +7,7 @@ const products = [
       description: "Provides essential nutrients for a wide variety of plants, promoting healthy growth and blooms.",
       link: "all-purpose-fertilizer",
       Type: "Fertilizer",
+    category:"fertilizers"
     },
     {
       id: 37,
@@ -16,6 +17,7 @@ const products = [
       description: "Specially formulated to boost yield and flavor in tomatoes, peppers, cucumbers, and other vegetables.",
       link: "tomato-fertilizer",
       Type: "Fertilizer",
+    category:"fertilizers"
     },
     {
       id: 38,
@@ -25,6 +27,7 @@ const products = [
       description: "Encourages abundant blooms and vibrant colors in roses, annuals, and perennials.",
       link: "rose-fertilizer",
       Type: "Fertilizer",
+    category:"fertilizers"
     },
     {
       id: 39,
@@ -34,6 +37,7 @@ const products = [
       description: "Supports vigorous growth and juicy fruit production in citrus trees, apple trees, and other fruit trees.",
       link: "citrus-fertilizer",
       Type: "Fertilizer",
+    category:"fertilizers"
     },
     {
       id: 40,
@@ -43,6 +47,7 @@ const products = [
       description: "Promotes thick, green, and healthy lawns with balanced nutrients and weed control.",
       link: "lawn-fertilizer",
       Type: "Fertilizer",
+    category:"fertilizers"
     },
     {
       id: 41,
@@ -52,6 +57,7 @@ const products = [
       description: "Made from plant-based ingredients, ideal for gardeners who prefer eco-friendly options.",
       link: "organic-fertilizer",
       Type: "Fertilizer",
+    category:"fertilizers"
     },
     {
       id: 42,
@@ -61,6 +67,7 @@ const products = [
       description: "Rich, nutrient-rich soil amendment made from decomposed organic matter, improves soil health and fertility.",
       link: "compost",
       Type: "Fertilizer",
+    category:"fertilizers"
     },
     // ... (Add more fertilizer products as needed)
   ];

@@ -8,6 +8,7 @@ const products = [
       description: "Striking variegated foliage, unique and eye-catching.",
       link: "monstera-thai-constellation",
       Type: "Houseplant",
+    category: "trendingPlants"
     },
     {
       id: 2,
@@ -17,6 +18,7 @@ const products = [
       description: "Elongated leaves with captivating stripes, perfect for hanging baskets.",
       link: "philodendron-birkin",
       Type: "Houseplant",
+    category: "trendingPlants"
     },
     {
       id: 3,
@@ -26,6 +28,7 @@ const products = [
       description: "Delicate and charming, ideal for adding texture to shelves or terrariums.",
       link: "string-of-pearls",
       Type: "Houseplant",
+    category: "trendingPlants"
     },
     {
       id: 4,
@@ -35,6 +38,7 @@ const products = [
       description: "Round, coin-shaped leaves, easy to care for and brings good vibes.",
       link: "pilea-peperomioides",
       Type: "Houseplant",
+    category: "trendingPlants"
     },
     {
       id: 5,
@@ -44,6 +48,7 @@ const products = [
       description: "Symbol of prosperity and luck, thick leaves with vibrant green color.",
       link: "jade-plant",
       Type: "Houseplant",
+    category: "trendingPlants"
     },
   
     {
@@ -54,6 +59,7 @@ const products = [
       description: "Fragrant blooms and beautiful foliage, attracts bees and butterflies.",
       link: "lavender",
       Type: "Outdoor Plant",
+    category: "trendingPlants"
     },
   
     {
@@ -64,6 +70,7 @@ const products = [
       description: "Unique textured leaves, a conversation starter for any living space.",
       link: "calathea-orbifolia",
       Type: "Houseplant",
+    category: "trendingPlants"
     },
     {
       id: 8,
@@ -74,6 +81,7 @@ const products = [
       description: "Cheerful annuals with vibrant yellow daisy-like flowers, attract pollinators.",
       link: "black-eyed-susan",
       Type: "Outdoor Plant",
+    category: "trendingPlants"
     },
     {
       id: 9,
@@ -84,6 +92,7 @@ const products = [
       description: "Low-maintenance and air purifying, perfect for unique displays.",
       link: "air-plant-tillandsia",
       Type: "Houseplant",
+    category: "trendingPlants"
     },
   
     // ... Add more bonus plants with details ...

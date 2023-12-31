@@ -3,7 +3,7 @@ import Card from '@mui/joy/Card';
 import CardCover from '@mui/joy/CardCover';
 import CardContent from '@mui/joy/CardContent';
 import Typography from '@mui/joy/Typography';
-import { Link } from '@mui/joy';
+import { Button, Link } from '@mui/joy';
 
 
 export default function GardenCategoryCard({ category, image, link, subtitle }) {
@@ -30,13 +30,13 @@ export default function GardenCategoryCard({ category, image, link, subtitle }) 
         </Typography>
         <Typography sx={{ color: '#fff' }}>{subtitle}</Typography>
         <Link href={link}>
-          <button
-            variant="outlined"
+          <Button
+            variant="solid"
             color="primary"
-            sx={{ marginTop: '1em', width: 200 }}
+            sx={{ marginTop: '1em', borderRadius:'20px',backgroundColor:'darkgreen', width: 200 }}
           >
         Shop Now
-      </button>
+      </Button>
       </Link>
     </CardContent>
     </Card >
