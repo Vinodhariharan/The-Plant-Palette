@@ -24,8 +24,8 @@ function ProductCardSlider({ products }) {
         dots: true,
         infinite: true,
         speed: 500,
-        slidesToShow: 3,
-        slidesToScroll: 3,
+        slidesToShow: 4,
+        slidesToScroll: 4,
         prevArrow: <CustomPrevArrow />,
         nextArrow: <CustomNextArrow />,
     };
@@ -40,13 +40,6 @@ function ProductCardSlider({ products }) {
                 {products.map((product, index) => (
                     <ProductCard
                         key={product.id || index}
-                        // imageSrc={product.imageSrc}
-                        // title={product.title}
-                        // price={product.price}
-                        // stock={product.stock}
-                        // // link={product.link}
-                        // plantType={product.plantType}
-                        // bloomTime={product.bloomTime}
                         product={product}
                     />
                 ))}

@@ -17,7 +17,7 @@ const MegaMenu = () => {
         <div className="content">
           <ul className="links">
             <li>
-              <a href='/productList/plants' className="desktop-link">Plants</a>
+              <a href='/productList/trendingPlants' className="desktop-link">Plants</a>
               <input type="checkbox" id="show-plants" />
               <label htmlFor="show-plants">Plants</label>
               <ul>
@@ -29,15 +29,15 @@ const MegaMenu = () => {
               </ul>
             </li>
             <li>
-              <a href='/productList/fertilizers' className="desktop-link">Fertilizers</a>
-              <input type="checkbox" id="show-soil-fertilizers" />
-              <label htmlFor="show-soil-fertilizers">Soil and Fertilizers</label>
+            <a href='/productList/tools' className="desktop-link">Tools</a>
+              <input type="checkbox" id="show-tools" />
+              <label htmlFor="show-tools">Tools</label>
               <ul>
-                <li><a className='pagemaps' href='/productList'>Potting Mix</a></li>
-                <li><a className='pagemaps' href='/productList'>Garden Soil</a></li>
-                <li><a className='pagemaps' href='/productList'>Mulch</a></li>
-                <li><a className='pagemaps' href='/productList'>Compost</a></li>
-                <li><a className='pagemaps' href='/productList'>Fertilizers</a></li>
+                <li><a className='pagemaps' href='/productList/EssentialTools'>Essential Tools</a></li>
+                <li><a className='pagemaps' href='/productList/HelpfulTools'>Helpful Tools</a></li>
+                <li><a className='pagemaps' href='/productList/UsefulTools'>Useful Tools</a></li>
+                {/* <li><a className='pagemaps' href='/productList'>Trowels</a></li>
+                <li><a className='pagemaps' href='/productList'>Hoes</a></li> */}
               </ul>
             </li>
             <li>
@@ -45,20 +45,20 @@ const MegaMenu = () => {
               <input type="checkbox" id="show-containers" />
               <label htmlFor="show-containers">Containers</label>
               <ul>
-                <li><a className='pagemaps' href='/productList'>Pots and Planters (Clay, Plastic, Hanging, Raised Beds)</a></li>
+                {/* <li><a className='pagemaps' href='/productList'>Pots and Planters (Clay, Plastic, Hanging, Raised Beds)</a></li> */}
               </ul>
             </li>
             <li>
-              <a href='/productList/tools' className="desktop-link">Tools</a>
-              <input type="checkbox" id="show-tools" />
-              <label htmlFor="show-tools">Tools</label>
-              <ul>
-                <li><a className='pagemaps' href='/productList'>Shovels</a></li>
-                <li><a className='pagemaps' href='/productList'>Rakes</a></li>
-                <li><a className='pagemaps' href='/productList'>Pruners</a></li>
-                <li><a className='pagemaps' href='/productList'>Trowels</a></li>
-                <li><a className='pagemaps' href='/productList'>Hoes</a></li>
-              </ul>
+            <a href='/productList/fertilizers' className="desktop-link">Fertilizers</a>
+              <input type="checkbox" id="show-soil-fertilizers" />
+              <label htmlFor="show-soil-fertilizers">Soil and Fertilizers</label>
+              {/* <ul>
+                <li><a className='pagemaps' href='/productList'>Potting Mix</a></li>
+                <li><a className='pagemaps' href='/productList'>Garden Soil</a></li>
+                <li><a className='pagemaps' href='/productList'>Mulch</a></li>
+                <li><a className='pagemaps' href='/productList'>Compost</a></li>
+                <li><a className='pagemaps' href='/productList'>Fertilizers</a></li>
+              </ul> */}
             </li>
             {/* Repeat the pattern for other categories */}
             {/* ... */}

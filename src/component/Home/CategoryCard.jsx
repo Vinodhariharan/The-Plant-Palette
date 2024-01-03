@@ -8,7 +8,7 @@ import { Button, Link } from '@mui/joy';
 
 export default function GardenCategoryCard({ category, image, link, subtitle }) {
   return (
-    <Card sx={{ minHeight: '280px', width: 420, margin: '20px' }}>
+    <Card sx={{ minHeight: '280px', width: 420, margin: '20px' , borderRadius:'0'}}>
       <CardCover >
         <img
           src={image}

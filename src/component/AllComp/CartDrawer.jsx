@@ -15,19 +15,27 @@ import ProductCard from './CardComponent'; // Assume you have a ProductCard comp
 import { Badge } from '@mui/material';
 import useCart, { CartContext } from './useCart'; // Import the useCart custom hook
 import { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+
 import { CartCard } from './CartCard';
 
 export default function CartDrawer() {
   const [open, setOpen] = React.useState(false);
   const { cartItems, addToCart } = useContext(CartContext);
+  const history = useHistory();
+
   
 
   const handleRemoveItem = (item) => {
     addToCart(item); // Reuse addToCart for removing items by adding them back with quantity - 1
   };
-  // React.useEffect(() => {}, cartItems);
 
-  console.log(cartItems)
+  const handleCheckout = () => {
+    // Redirect to the checkout page
+    history.push('/checkout');
+    // Close the cart drawer
+    setOpen(false);
+  };
 
 
   return (
@@ -75,18 +83,6 @@ export default function CartDrawer() {
               <List>
                 {cartItems.map((item) => (
                   <ListItem key={item.link}>
-                    {/* <ProductCard product={item} /> 
-                    <Stack direction="row" alignItems="center" sx={{ ml: 2 }}>
-                      <Typography variant="body2">{item.price} INR</Typography>
-                      <Button
-                        variant="outlined"
-                        color="neutral"
-                        size="small"
-                        onClick={() => handleRemoveItem(item)}
-                      >
-                        Remove
-                      </Button>
-                    </Stack> */}
                     <CartCard product={item}></CartCard>
                   </ListItem>
                 ))}
@@ -101,7 +97,7 @@ export default function CartDrawer() {
             spacing={1}
           >
             <Button sx={{ borderRadius: '20px', backgroundColor:'#0A4938', color:"#fff"}}
-        variant="soft">
+        variant="soft"  onClick={handleCheckout}>
               Checkout
             </Button>
             <Button sx={{ borderRadius: '20px', backgroundColor:'red', color:"#fff" }}

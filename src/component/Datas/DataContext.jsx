@@ -13,7 +13,7 @@ const MyContextProvider = ({ children }) => {
 
   useEffect(() => {
     async function fetchData() {
-      const allTypes = ['containers', 'flowers', 'tools', 'fertilizers', 'shrubs', 'trendingPlants'];
+      const allTypes = ['containers', 'flowers', 'tools', 'fertilizers', 'shrubs', 'trendingPlants','trees'];
       var allData = {};
 
       for (let index = 0; index < allTypes.length; index++) {
@@ -21,7 +21,6 @@ const MyContextProvider = ({ children }) => {
         try {
           const response = await getType(element);
           allData[element] = response.data;
-          console.log(allData);
         } catch (error) {
           console.log(error);
         }

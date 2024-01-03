@@ -27,7 +27,7 @@ export default function ProductCard({
   
   return (
     <ThemeProvider theme={theme}>
-      <Card sx={{ width: 320, maxWidth: '100%', boxShadow: 'lg', margin: '0 30px', borderRadius: '10px' }}>
+      <Card sx={{ width: 260, maxWidth: '100%', boxShadow: 'lg', margin: '0 0px', borderRadius: '0px' }}>
         <CardOverflow>
           <AspectRatio sx={{ minWidth: 200 }}>
             <img

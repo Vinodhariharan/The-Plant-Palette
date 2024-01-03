@@ -4,6 +4,26 @@ import pic from '../../assets/images/Add a heading (1).png';
 import { Link } from 'react-router-dom';
 import { Snackbar, Alert, Button } from '@mui/material';
 import { Input } from '@mui/joy';
+import axios from 'axios';
+
+
+function addData(formData){
+const apiUrl = 'http://localhost:8000/users'; // Replace with your JSON server endpoint
+
+// const userObject = {
+//   firstname: 'John',
+//   lastname: 'Doe',
+// };
+
+axios.post(apiUrl, formData)
+  .then(response => {
+    console.log('User added successfully:', response.data);
+  })
+  .catch(error => {
+    console.error('Error adding user:', error);
+  });
+
+}
 
 function Register() {
   const [errorMessage, setErrorMessage] = useState(false);
@@ -29,9 +49,10 @@ function Register() {
     isValid = validateForm();
     if (isValid) {
       // Handle registration logic (e.g., send data to server)
-      console.log('Registration data:', formData);
+      console.log((formData))
+      addData(formData);
       setOpenSucessSnackbar(true); // Show success Snackbar
-      window.location.replace("/")
+      window.location.replace("/login")
     } else {
       setOpenErrorSnackbar(true); // Show error Snackbar
     }
@@ -101,7 +122,7 @@ function Register() {
       </Snackbar>
       <div className="container">
         <form className="register-form" onSubmit={handleSubmit}>
-          <h4 className="heading" style={{ paddingBottom: '10px' }}>The Plant Palette</h4>
+        <Link to='/' style={{color:'#0A4938'}}><h4 className='heading' style={{ paddingBottom: '10px' }}>The Plant Palette</h4></Link>
           <h2 style={{ paddingBottom: '10px' }}>Register</h2>
           <label htmlFor="firstName">First Name</label>
           <Input sx={{borderRadius:'20px'}}
@@ -144,7 +165,7 @@ function Register() {
             sx={{borderRadius:'20px'}}
           />
           {/* <Link sx={{ paddingBottom: '10px' }} to="/"> */}
-          <Button variant='contained' style={{width:'100%', margin:'10px',marginLeft:'0px', borderRadius:'20px'}} type="submit">Register</Button>
+          <Button variant='contained' style={{width:'100%', margin:'10px',marginLeft:'0px', borderRadius:'20px', fontFamily:'League Spartan, sans-serif', textDecoration:''}} type="submit">Register</Button>
           {/* </Link> */}
           <p style={{ margin: '10px', textAlign: 'center' }}>
             I'm already a member! <Link to="/login"><span style={{ color: 'blue' }}>Sign In</span></Link>

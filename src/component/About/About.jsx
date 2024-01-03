@@ -3,14 +3,6 @@ import { Link } from 'react-router-dom';
 import MasonryImageList from './ImageGrid';
 import { Button } from '@mui/material';
 
-// Replace with your product data source
-const products = [
-  { name: 'Vibrant Violet Verbena', description: 'Blooms with clusters of fragrant purple flowers...' },
-  { name: 'Sunny Sunflower', description: 'Tall stalks with cheerful yellow blooms...' },
-  { name: 'Emerald Evergreen Fern', description: 'Delicate fronds add life to shady corners...' },
-  // ... add more products
-];
-
 function About() {
   return (
     <div className="about-page" style={{justifyContent:"center"}}>
