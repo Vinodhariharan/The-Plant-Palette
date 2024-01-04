@@ -8,27 +8,25 @@ import Chip from '@mui/joy/Chip';
 import Link from '@mui/joy/Link';
 import Typography from '@mui/joy/Typography';
 import ArrowOutward from '@mui/icons-material/ArrowOutward';
-import theme from '../../theme'; // Import your Material-UI theme
-import { ThemeProvider } from '@mui/joy/styles';
+import { Skeleton } from '@mui/material';
 import '../../assets/css/button.css';
 import { CartContext } from "./useCart.js";
-import products from '../Datas/flowers.js';
-
 
 export default function ProductCard({
   key,
   product
 }) {
-
   const { cartItems, addToCart } = React.useContext(CartContext);
+
   const handleAddToCart = () => {
     addToCart(product);
   }
-  
+
   return (
-    <ThemeProvider theme={theme}>
-      <Card sx={{ width: 260, maxWidth: '100%', boxShadow: 'lg', margin: '0 0px', borderRadius: '0px' }}>
-        <CardOverflow>
+    // <ThemeProvider theme={theme}>
+    <Card sx={{ width: 260, maxWidth: '100%', boxShadow: 'lg', margin: '0 15px', borderRadius: '0px' }}>
+      <CardOverflow>
+        {product.imageSrc ? (
           <AspectRatio sx={{ minWidth: 200 }}>
             <img
               src={product.imageSrc}
@@ -38,9 +36,19 @@ export default function ProductCard({
               key={key}
             />
           </AspectRatio>
-        </CardOverflow>
-        <CardContent>
+        ) : (
+          // Display Skeleton for the image while loading
+          <Skeleton variant="rectangular" width={200} height={150} />
+        )}
+      </CardOverflow>
+      <CardContent>
+        {product.Type ? (
           <Typography level="body-xs">Type: {product.Type}</Typography>
+        ) : (
+          // Display Skeleton for the Type while loading
+          <Skeleton variant="text" width={100} height={20} />
+        )}
+        {product.title ? (
           <Link
             href={`/products/${product.link}`}
             fontWeight="md"
@@ -49,11 +57,40 @@ export default function ProductCard({
             overlay
             endDecorator={<ArrowOutward />}
           >
-            {product.title}
+            <Typography
+              level="title-lg"
+              sx={{
+                mt: 1,
+                fontWeight: 'xl',
+                overflow: 'hidden',
+                textOverflow: 'ellipsis',
+                whiteSpace: 'nowrap',
+              }}
+              endDecorator={
+                product.bloomTime && (
+                  <Chip component="span" size="sm" variant="soft" color="info">
+                    Blooms in {product.bloomTime}
+                  </Chip>
+                )
+              }
+            >
+              {product.title}
+            </Typography>
           </Link>
+        ) : (
+          // Display Skeleton for the title while loading
+          <Skeleton variant="text" width={150} height={20} />
+        )}
+        {product.price ? (
           <Typography
             level="title-lg"
-            sx={{ mt: 1, fontWeight: 'xl' }}
+            sx={{
+              mt: 1,
+              fontWeight: 'xl',
+              overflow: 'hidden',
+              textOverflow: 'ellipsis',
+              whiteSpace: 'nowrap',
+            }}
             endDecorator={
               product.bloomTime && (
                 <Chip component="span" size="sm" variant="soft" color="info">
@@ -64,16 +101,22 @@ export default function ProductCard({
           >
             {product.price} INR
           </Typography>
-          {/* {product.stock && ( // Only show stock if available
-            <Typography level="body-xs">Only {product.stock} left!</Typography>
-          )} */}
-          <Typography level="body-xs">{product.stock ? `Only ${product.stock} left!` : 'Available'}</Typography>
+        ) : (
+          // Display Skeleton for the price while loading
+          <Skeleton variant="text" width={80} height={20} />
+        )}
+        {product.stock ? (
+          <Typography level="body-xs">Only {product.stock} left!</Typography>
+        ) : (
+          // Display Skeleton for the stock while loading
+          <Typography level="body-xs">Available</Typography>
+        )}
 
-          <Button style={{ marginTop: '10px', borderRadius: '20px' }} onClick={handleAddToCart}>
-            Add to Garden
-          </Button>
-        </CardContent>
-      </Card>
-    </ThemeProvider>
+        <Button style={{ marginTop: '10px', borderRadius: '20px' }} onClick={handleAddToCart}>
+          Add to Garden
+        </Button>
+      </CardContent>
+    </Card>
+    // </ThemeProvider>
   );
 }

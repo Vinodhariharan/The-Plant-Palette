@@ -7,6 +7,7 @@ import { DataContext } from '../Datas/DataContext';
 
 const Home = () => {
   const { data } = useContext(DataContext); 
+  console.log(data);
 
 
   return (

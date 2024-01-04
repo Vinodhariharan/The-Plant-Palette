@@ -35,6 +35,7 @@ function Register() {
     password: '',
     confirmPassword: '',
   });
+
   const [SnackBarError, setOpenErrorSnackbar] = useState(false);
   const [SnackBarSucess, setOpenSucessSnackbar] = useState(false);
 
@@ -48,8 +49,6 @@ function Register() {
 
     isValid = validateForm();
     if (isValid) {
-      // Handle registration logic (e.g., send data to server)
-      console.log((formData))
       addData(formData);
       setOpenSucessSnackbar(true); // Show success Snackbar
       window.location.replace("/login")

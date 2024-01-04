@@ -20,6 +20,7 @@ import images from './component/Datas/images.js';
 import { MyContextProvider } from './component/Datas/DataContext.jsx';
 import Checkout from './component/Checkout/checkout.jsx';
 import PaymentPage from './component/Checkout/PlaceOrder.jsx'; // Import the PaymentPage component
+import SideMenu from './component/Home/SideMenu.jsx';
 
 const App = () => {
   const [isLoggedIn, setLoggedIn] = useState(false);
@@ -52,9 +53,10 @@ const AppContent = ({ isLoggedIn, setLoggedIn }) => {
     <div>
       {!isAuthPage && <Navbar isLoggedIn={isLoggedIn} setLoggedIn={setLoggedIn} />}
       {!isAuthPage && <ProductCategories />}
+      {/* {!isAuthPage && <SideMenu />} */}
       <Container sx={{ marginTop: 2, minHeight: '100vh' }}>
-
         {isAuthHome && <ImageSlider images={images} />}
+
 
         <Switch>
           <Route path="/" exact component={Home} />

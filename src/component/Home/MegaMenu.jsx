@@ -1,12 +1,13 @@
 // Import React
 import React from 'react';
 import '../../assets/css/MegaMenu.css'; // Make sure to import your CSS file
+import { Container } from '@mui/material';
 
 // Define your MegaMenu component
 const MegaMenu = () => {
   return (
     <div className="wrapper">
-
+      <Container>
       <nav>
             <div class="logo"><a href="#">Categories:</a></div>
         <input type="checkbox" id="show-search" />
@@ -64,16 +65,18 @@ const MegaMenu = () => {
             {/* ... */}
           </ul>
         </div>
-        <label htmlFor="show-search" className="search-icon">
+        {/* <label htmlFor="show-search" className="search-icon">
           <i className="fas fa-search"></i>
-        </label>
-        <form action="#" className="search-box">
+        </label> */}
+        {/* <form action="#" className="search-box">
           <input type="text" placeholder="Type Something to Search..." required />
           <button type="submit" className="go-icon">
             <i className="fas fa-long-arrow-alt-right"></i>
           </button>
-        </form>
+        </form> */}
       </nav>
+      </Container>
+
     </div>
   );
 };

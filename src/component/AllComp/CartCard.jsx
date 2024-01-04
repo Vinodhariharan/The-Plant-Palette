@@ -4,7 +4,6 @@ import Button from '@mui/joy/Button';
 import Card from '@mui/joy/Card';
 import CardContent from '@mui/joy/CardContent';
 import CardOverflow from '@mui/joy/CardOverflow';
-import Chip from '@mui/joy/Chip';
 import Link from '@mui/joy/Link';
 import Typography from '@mui/joy/Typography';
 import ArrowOutward from '@mui/icons-material/ArrowOutward';
@@ -13,32 +12,32 @@ import { ThemeProvider } from '@mui/joy/styles';
 import '../../assets/css/button.css';
 import { CartContext } from "./useCart.js";
 import Autocomplete from '@mui/joy/Autocomplete';
-import AutocompleteOption from '@mui/joy/AutocompleteOption';
-import Input from '@mui/joy/Input';
 
 
 export function CartCard({
     product
 }) {
 
-    const { cartItems, addToCart } = React.useContext(CartContext);
+    const { cartItems, addToCart, removeFromCart } = React.useContext(CartContext);
     const handleAddToCart = () => {
         addToCart(product);
     }
-    
-
+    const handleRemove = () => {
+        removeFromCart(product);
+    }
 
     return (
         <ThemeProvider theme={theme}>
-            <Card orientation="horizontal" sx={{ width: '100%', boxShadow: 'lg', margin: '0 5px', borderRadius: '0px' }}>
+            <Card orientation="horizontal" sx={{ width: '100%', height: '200px', boxShadow: 'lg', margin: '0 5px', borderRadius: '0px' }}>
                 <CardOverflow>
-                    <AspectRatio sx={{ minWidth: 200 }}>
+                    <AspectRatio ratio="1" sx={{ width: 200 }}>
                         <img
                             src={product.imageSrc}
                             srcSet={`${product.imageSrc} 2x`}
                             loading="lazy"
                             alt={product.title}
                             key={product.key}
+                            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                         />
                     </AspectRatio>
                 </CardOverflow>
@@ -47,9 +46,9 @@ export function CartCard({
                     <Autocomplete
                         variant="soft"
                         placeholder="Soft variant"
-                        defaultValue={product.quantity}
-                        options={[1,2,3,4,5,6,7,8,9,10]}
-                        sx={{ width:100 }}
+                        value={product.quantity}
+                        options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+                        sx={{ width: 100 }}
                     />
                     <Link
                         href={`/products/${product.link}`}
@@ -59,19 +58,24 @@ export function CartCard({
                         overlay
                         endDecorator={<ArrowOutward />}
                     >
-                        {product.title}
+                        <Typography level="md">{product.title}</Typography>
                     </Link>
-                    <Typography level="body-xs">1-Quantity Price: {product.price}</Typography>
-                    <Typography
-                        level="title-lg"
-                        sx={{ mt: 1, fontWeight: 'xl' }}
-                    >
-                        {product.price * product.quantity} INR
-                    </Typography>
-                    <Typography level="body-xs">{product.stock ? `Only ${product.stock} left!` : 'Available'}</Typography>
-                    <Button style={{backgroundColor:'red',width:'50%',marginLeft:'50%',borderRadius:'20px'}} onClick={handleAddToCart}>
-                        Remove
-                    </Button>
+
+                    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                        <div>
+                            <Typography level="title-lg" sx={{ mt: 1, fontWeight: 'xl' }}>
+                                {product.price * product.quantity} INR
+                            </Typography>
+                            <Typography level="body-xs">{product.stock ? `Only ${product.stock} left!` : 'Available'}</Typography>
+                        </div>
+                        <Button
+                            style={{ backgroundColor: 'red', height: '40px', borderRadius: '20px', alignSelf: 'flex-end' }}
+                            onClick={handleRemove}
+                        >
+                            Remove
+                        </Button>
+                    </div>
+
                 </CardContent>
             </Card>
         </ThemeProvider>

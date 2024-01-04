@@ -7,8 +7,9 @@ import Button from '@mui/joy/Button';
 import { Container, IconButton } from '@mui/material';
 import Badge from '@mui/material/Badge';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import '../../assets/css/Navbar.css';
+import MenuIcon from '@mui/icons-material/Menu';import '../../assets/css/Navbar.css';
 import CartDrawer from './CartDrawer';
+import SideMenu from '../Home/SideMenu'
 
 import LoginIcon from '@mui/icons-material/Login';
 import LogoutIcon from '@mui/icons-material/Logout';
@@ -18,6 +19,7 @@ const Navbar = ({ isLoggedIn, setLoggedIn }) => {
     <AppBar position="fixed" className="navbar" sx={{backgroundColor:'#0A4938'}}>
         <Container>
       <Toolbar className="toolbar">
+      <SideMenu/>
         <Typography variant="h6" component="div" fontFamily="Duru Sans, sans-serif;" sx={{color:'white'}}>
           <Link to="/"><b >The Plant Palette</b></Link>
         </Typography>

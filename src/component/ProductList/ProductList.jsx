@@ -43,7 +43,7 @@ export default function ProductList(pro) {
   };
 
   return (
-    <Grid container spacing={2} sx={{ width: '100%' }}>
+    <Grid container spacing={2} sx={{ width: '100%', marginBottom:'10px' }}>
       <Grid item xs={12}>
         <Box
           sx={{

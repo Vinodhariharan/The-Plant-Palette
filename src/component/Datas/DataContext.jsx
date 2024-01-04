@@ -35,7 +35,9 @@ const MyContextProvider = ({ children }) => {
   }, []);
 
   function getType(type) {
+    console.log(type);
     return axios.get(`http://localhost:8000/${type}`);
+
   }
 
   return (

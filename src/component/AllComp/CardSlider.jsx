@@ -3,6 +3,7 @@ import ProductCard from './CardComponent';
 import { ArrowBack, ArrowForward } from '@mui/icons-material';
 
 function ProductCardSlider({ products }) {
+    console.log()
 
     const CustomPrevArrow = (props) => (
         <ArrowBack

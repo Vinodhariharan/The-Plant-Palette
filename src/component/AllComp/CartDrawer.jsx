@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import Drawer from '@mui/joy/Drawer';
 import Button from '@mui/joy/Button';
@@ -11,24 +11,21 @@ import DialogContent from '@mui/joy/DialogContent';
 import ModalClose from '@mui/joy/ModalClose';
 import Stack from '@mui/joy/Stack';
 import Typography from '@mui/joy/Typography';
-import ProductCard from './CardComponent'; // Assume you have a ProductCard component
 import { Badge } from '@mui/material';
-import useCart, { CartContext } from './useCart'; // Import the useCart custom hook
-import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
-
+import { CartContext } from './useCart'; // Import the CartContext
 import { CartCard } from './CartCard';
 
 export default function CartDrawer() {
-  const [open, setOpen] = React.useState(false);
-  const { cartItems, addToCart } = useContext(CartContext);
+  const [open, setOpen] = useState(false);
+  const {cartItems, addToCart } = useContext(CartContext);
   const history = useHistory();
-
-  
-
-  const handleRemoveItem = (item) => {
-    addToCart(item); // Reuse addToCart for removing items by adding them back with quantity - 1
-  };
+  var storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  useEffect(() => {
+    // Fetch cartItems from local storage on mount
+    storedCartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    // Update the cartItems in the context
+  }, [cartItems]);
 
   const handleCheckout = () => {
     // Redirect to the checkout page
@@ -37,28 +34,27 @@ export default function CartDrawer() {
     setOpen(false);
   };
 
-
   return (
     <div>
       <Button
         sx={{ borderRadius: '20px' }}
         variant="soft"
         color="neutral"
-        endDecorator={<Badge badgeContent={cartItems.length} color="primary" >
-          <ShoppingCartIcon color='white'/>
-        </Badge>}
+        endDecorator={
+          <Badge badgeContent={cartItems.length} color="primary">
+            <ShoppingCartIcon color='white' />
+          </Badge>
+        }
         onClick={() => setOpen(true)}
       >
         View Cart
       </Button>
       <Drawer
-        size="md"
         variant="plain"
         open={open}
         onClose={() => setOpen(false)}
-        slotProps={{
-          // ... (add any additional configurations you need)
-        }}
+        size={'md'}
+        anchor='right'
       >
         <Sheet
           sx={{
@@ -81,9 +77,10 @@ export default function CartDrawer() {
               </Typography>
             ) : (
               <List>
-                {cartItems.map((item) => (
+                {storedCartItems.map((item) => (
                   <ListItem key={item.link}>
-                    <CartCard product={item}></CartCard>
+                    {/* Assuming CartCard handles the removal logic */}
+                    <CartCard product={item}  />
                   </ListItem>
                 ))}
               </List>
@@ -96,13 +93,13 @@ export default function CartDrawer() {
             useFlexGap
             spacing={1}
           >
-            <Button sx={{ borderRadius: '20px', backgroundColor:'#0A4938', color:"#fff"}}
-        variant="soft"  onClick={handleCheckout}>
+            <Button sx={{ borderRadius: '20px', backgroundColor: '#0A4938', color: "#fff" }}
+              variant="soft" onClick={handleCheckout}>
               Checkout
             </Button>
-            <Button sx={{ borderRadius: '20px', backgroundColor:'red', color:"#fff" }}
-        variant="soft"
-       onClick={() => setOpen(false)}>Close</Button>
+            <Button sx={{ borderRadius: '20px', backgroundColor: 'red', color: "#fff" }}
+              variant="soft"
+              onClick={() => setOpen(false)}>Close</Button>
           </Stack>
         </Sheet>
       </Drawer>
